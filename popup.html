@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Water Reminder</title>
+    <script>
+    
+    var timerVar = setInterval(countTimer, 1000);
+    var totalSeconds = 0;
+    function countTimer() {
+           ++totalSeconds;
+           var hour = Math.floor(totalSeconds /3600);
+           var minute = Math.floor((totalSeconds - hour*3600)/60);
+           var seconds = totalSeconds - (hour*3600 + minute*60);
+           if(hour < 10)
+             hour = "0"+hour;
+           if(minute < 10)
+             minute = "0"+minute;
+           if(seconds < 10)
+             seconds = "0"+seconds;
+           document.getElementById("lblno").innerHTML = hour + ":" + minute + ":" + seconds;
+
+           if(minute == 30)
+           {
+             alert("Time to drink water");
+             minute = 0
+             hour = 0
+             second = 0
+             totalSeconds = 0
+            // clearInterval(timerVar);
+             document.getElementById("lblno").innerHTML ="";
+           }
+        }
+      var bleep = new Audio();
+      bleep.src = "bleep.wav";
+      var satno = 0;
+      function satno(){
+        satno++;
+        document.getElementById("satno").innerHTML ="";
+      }
+    </script>
+  </head>
+  <style>
+    h1{
+      color: rgb(255, 255, 255);
+      font-family: "Lucida Console", "Courier New", monospace;
+    }
+
+    body{
+      background-color: #121212;
+      padding:0;
+      margin: 0;
+      font-family: "Lucida Console", "Courier New", monospace;
+      font-weight: 1000;
+      text-decoration: none;
+    }
+
+    .top-nav{
+      text-align: center;
+      margin-top: 0px;
+      padding-left: 0px;
+    }
+
+    .top-nav-lists{
+      display:inline-block;
+      border: 1px solid #eee;
+      padding: 10px 50px;
+      text-align: center;
+    }
+
+    .top-nav-links {
+      text-decoration: none;
+      text-decoration-color: seashell;
+      color: aliceblue;
+      font-family: "Montserrat", sans-serif;
+      font-size: xx-large;
+    }
+
+    .top-nav-lists:hover{
+      background-color: rgb(23, 226, 165);
+      transition: 0.6s ease-in;
+    }
+
+    h4{
+     color: rgb(255, 255, 255);
+     font-family: "Lucida Console", "Courier New", monospace;
+   }
+   p{
+     color:#FFFFFF
+   }
+
+   h5{
+    color: rgb(255, 255, 255);
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  h2{
+   color: rgb(255, 255, 255);
+   font-family: "Lucida Console", "Courier New", monospace;
+ }
+ 
+ a{
+   color:rgb(255, 255, 255)
+ }
+ 
+ </style>
+ 
+<body> 
+  <img src="file:///C:/Users/shahk_i4n0c8c/Pictures/Screenshot%202020-12-14%20103644.png" width="150" height="130"> 
+
+  <nav>
+    <ul class="top-nav">
+      <li class="top-nav-lists"><a href="file:///C:/Users/shahk_i4n0c8c/Documents/codingForees/Coding%20For%20Eees%20website/Coding%20For%20Eees%20website.html" class="top-nav-link">Home</a></li> 
+     <li class="top-nav-lists"><a href="file:///C:/Users/shahk_i4n0c8c/Documents/codingForees/Coding%20For%20Eees%20website/popup.html" class="top-nav-link">Water Reminder</a></li> 
+     <li class="top-nav-lists"><a href="file:///C:/Users/shahk_i4n0c8c/Documents/codingForees/Coding%20For%20Eees%20website/the%20team.html" class="top-nav-link">The Team</a></li> 
+     <li class="top-nav-lists"><a href="file:///C:/Users/shahk_i4n0c8c/Documents/codingForees/Coding%20For%20Eees%20website/Blog.html" class="top-nav-link">The Blog</a></li> 
+     <li class="top-nav-lists"><a href="file:///C:/Users/shahk_i4n0c8c/Documents/codingForees/Coding%20For%20Eees%20website/games.html" class="top-nav-link">Games</a></li> 
+    </ul>
+  <h1 style="text-align: center;">Put your timer minutes</h1>
+  <button href="#" onmousedown="bleep.play()" id="btnStart" type="button" onclick="countTimer()">Start</button>
+  <button  id="btnStop"  type="button">Stop</button>
+  <button style="text-align: center;" id="satif"  type="button" onclick="satno()">click For satisfaction</button>
+  <p id="lblno"  ></p>
+  <p id="satno" ></p>
+  <table style="width: 1889px; height: 150px; border-color: black; background-color: #55d6aa; margin-left: auto; margin-right: auto;">
+  <th><h2 style="text-align: center;"> Webisite Made By Kanuck Shah For his buissnes CodingForEees</h2></th>
+</table>
+</nav>
+
+</body>
+
+
+</html> 
